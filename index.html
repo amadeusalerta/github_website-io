@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Portfolio Website</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/6bc512722a.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div id="header">
+        <div class="container">
+            <nav>
+                <img src="images/logo.png" class="logo">
+                <ul id="sidemenu">
+                    <li><a href="#header">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#services">Jobs</a></li>
+                    <li><a href="#portfolio">Portfolio</a></li>
+                    <li><a href="#content">Contact</a></li>
+                    <i class="fa-solid fa-x" onclick="closemenu()"></i>
+                </ul>
+                <i class="fa-solid fa-bars" onclick="openmenu()"></i>
+            </nav>
+            <div class="header-text">
+                <p>Game Developer</p>
+                <h1>Hi, I'm <span>Efe</span> A.<br>From Mersin</h1>
+            </div>
+        </div>
+    </div>
+
+    <div id="about">
+        <div class="container">
+            <div class="row">
+                <div class="about-col-1">
+                    <img src="images/user.png">
+                </div>
+                <div class="about-col-2">
+                    <h1 class="sub-title">About Me</h1>
+                    <p class="about_text">
+                        Born in 2002 and still alive. Born and raised in Mersin, the city that established seaside of the Mediterrenian Sea. Since 3 y.o he loves spending time with computers and mechanical devices. When I was in High School (MSAL), I decided to make games with Unity and also learned using Blender to make 3D assets for his own games. And these days I am still developing games but at the same time creating applications via using Python!
+                    </p>
+                    <div class="tab_titles">
+                        <p class="tab_links active_link" onclick="opentab('skills')">Skills</p>
+                        <p class="tab_links" onclick="opentab('experience')">Experience</p>
+                        <p class="tab_links" onclick="opentab('education')">Education</p>
+                    </div>
+                    <div class="tab-contents active-tab" id="skills">
+                        <ul>
+                            <li><span>Python</span><br>Making Image Processing with using Yolov5</li>
+                            <li><span>Web Development</span><br>Personal Portfolio Websites</li>
+                            <li><span>Game Development</span><br>Making games with Unity</li>
+                        </ul>
+                    </div>
+                    <div class="tab-contents" id="experience">
+                        <ul>
+                            <li><span>Unity</span><br>I'm Making Games!</li>
+                            <li><span>BTK Academy</span><br>Python Courses</li>
+                            <li><span>Teknofest Unmanned Underwater Vehicle </span><br>I'm  currently working as Codder</li>
+                        </ul>
+                    </div>
+                    <div class="tab-contents" id="education">
+                        <ul>
+                            <li><span>MSAL</span><br>as High School Student</li>
+                            <li><span>Toros University</span><br>as Undergraduate Student</li>
+                            <li><span>Gamer</span><br>as Angry League of Legends Player</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="services">
+        <div class="container">
+            <h1 class="sub-title">My Services</h1>
+            <div class="services_list">
+                <div>
+                    <i class="fa-solid fa-code"></i>
+                    <h2>Web Design</h2>
+                    <p class="services_tabs">I am interested with Web Development.</p>
+                    <a href="#">Learn More...</a>
+                </div>
+                <div>
+                    <i class="fa-solid fa-gamepad"></i>
+                    <h2>Game Design</h2>
+                    <p class="services_tabs">I'm interested Game Development with Unity since when i was young.</p>
+                    <a href="#">Learn More...</a>
+                </div>
+                <div>
+                    <i class="fa-solid fa-computer"></i>
+                    <h2>3D Design</h2>
+                    <p class="services_tabs">I also interested with 3D Modelling since when i was  on the High School.</p>
+                    <a href="#">Learn More...</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="portfolio">
+        <div class="container">
+            <h1 class="sub-title">My Projects</h1>
+            <div class="work-list">
+                <div class="work">
+                    <img src="images/work-1.png">
+                    <div class="layer">
+                        <h3>3D Games With Unity</h3>
+                        <p>I can make 3D Games for you.</p>
+                        <a href="#"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                    </div>
+                </div>
+                <div class="work">
+                    <img src="images/work-2.png">
+                    <div class="layer">
+                        <h3>Music Media App</h3>
+                        <p>I can make Music Media App for you.</p>
+                        <a href="#"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                    </div>
+                </div>
+                <div class="work">
+                    <img src="images/work-3.png">
+                    <div class="layer">
+                        <h3>Media Player App</h3>
+                        <p>I can make Media Player App for you..</p>
+                        <a href="#"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                    </div>
+                </div>
+            </div>
+            <a href="https://www.linkedin.com/in/efe-samet-alt%C4%B1nba%C5%9F-aa7226258/" class="btn">See More</a>
+        </div>
+    </div>
+
+    <div id="content">
+        <div class="container">
+            <div class="row">
+                <div class="contact-left">
+                    <h1 class="sub-title">Contact Me</h1>
+                    <p><i class="fa-solid fa-paper-plane"></i>my_test_email@gmail.com</p>
+                    <p><i class="fa-solid fa-phone"></i>05712374492</p>
+                    <div class="social-icons">
+                        <a href="https://github.com/amadeusalerta"><i class="fa-brands fa-github"></i></a>
+                        <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"><i class="fa-brands fa-x-twitter"></i></a>
+                        <a href="https://amadeusalerta.itch.io/"><i class="fa-brands fa-itch-io"></i></a>
+                        <a href="https://www.linkedin.com/in/efe-samet-alt%C4%B1nba%C5%9F-aa7226258/"><i class="fa-brands fa-linkedin"></i></a>
+                    </div>
+                    <a href="images/my-cv.pdf" download class="btn btn2">Download CV</a>
+                </div>
+                <div class="contact-right">
+                    <form name="submit-to-google-sheet">
+                        <input type="text" name="your-name" placeholder="Name" required>
+                        <input type="email" name="your-email" placeholder="Your email" required>
+                        <textarea name="message" rows="6" placeholder="Your Message"></textarea>
+                        <button type="submit" value="Submit" class="btn btn2">Submit</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="copyrights">
+            <p>Copyrights by Efe. Made by Efe Alt.</p>
+        </div>
+    </div>
+
+    <script>
+        var tablinks = document.getElementsByClassName("tab_links");
+        var tabcontents = document.getElementsByClassName("tab-contents");
+
+        function opentab(tabname) {
+            for (var i = 0; i < tablinks.length; i++) {
+                tablinks[i].classList.remove("active_link");
+                tabcontents[i].classList.remove("active-tab");
+            }
+
+            // Tıklanan sekmenin ve içeriğin aktif olması
+            event.currentTarget.classList.add("active_link");
+            document.getElementById(tabname).classList.add("active-tab");
+        }
+    </script>
+
+    <script>
+        var sidemenu = document.getElementById("sidemenu");
+
+        function openmenu() {
+            sidemenu.style.right = "0";
+        }
+
+        function closemenu() {
+            sidemenu.style.right = "-200px";
+        }
+    </script>
+
+    <script>
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbxR9rw6jEcmS06HF11VF2qFkODnGtzBEABrO5JGzcvim5zz5HL_7FWbx-kEXhNwOay93Q/exec';
+        const form = document.forms['submit-to-google-sheet'];
+
+        form.addEventListener('submit', e => {
+            e.preventDefault();
+            fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+                .then(response => console.log('Success!', response))
+                .catch(error => console.error('Error!', error.message));
+        });
+    </script>
+</body>
+</html>
