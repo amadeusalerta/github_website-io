@@ -14,14 +14,13 @@ body{
 #header{
     width: 100%;
     height: 100vh;
-    background-image: url(images/background.png);
+    background-image: url(images/background1.png);
     background-size: cover;
     background-position: center;    
 }
 .container{
     padding: 10px 10%;
 }
-
 nav{
     display: flex;
     align-items: center;
@@ -190,7 +189,8 @@ nav ul li a:hover::after{
     overflow: hidden;
 }
 .work img{
-    width: 400px;
+    width: 100%; /* container genişliğine uyumlu */
+    height: auto; /* yükseklik otomatik */
     border-radius: 10px;
     display: block;
     transition: transform 0.5s;
@@ -317,7 +317,6 @@ form btn2{
 nav .fa-solid{
     display: none;
 }
-
 @media only screen and (max-width:600px){
     #header{
         background-image: url(images/phone-background.png);
@@ -329,7 +328,6 @@ nav .fa-solid{
     .header-text h1{
         font-size: 30px;
     }
-
     nav .fa-solid{
         display: block;
         font-size: 25px;
