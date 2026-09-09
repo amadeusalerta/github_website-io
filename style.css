@@ -1,0 +1,334 @@
+@import url('https://fonts.googleapis.com/css2?family=Jersey+25&display=swap');
+
+/* ============================================================
+   PORTFOLIO SITE — STYLESHEET
+   Metallic tech-interface style (early-2000s inspired).
+   Single CSS file shared by every page. Pure CSS, no JS.
+
+   CONTENTS
+   1.  Variables & reset       — palette, bevel helpers
+   2.  Background + GIF layer   — steel ground, left-side GIF
+   3.  Top bar                  — brand + nav (metallic)
+   4.  Mobile nav toggle        — hamburger (CSS-only)
+   5.  Main window              — right-aligned content panel
+   6.  Headings / text / links
+   7.  Hero + About
+   8.  Portfolio cards + gallery
+   9.  Lightbox
+   10. Blog list
+   11. Experience
+   12. Resources + PDF buttons
+   13. Footer
+   14. Blog post page
+   15. Responsive
+
+   COLOURS live in :root — restyle the whole site from there.
+   ============================================================ */
+
+/* ============================================================
+   1. VARIABLES & RESET
+   ============================================================ */
+:root{
+  /* metallic silvers */
+  --sil-0:#eef1f4; --sil-1:#d7dde3; --sil-2:#b8c1ca; --sil-3:#9aa4af;
+  --steel:#63707d; --dark:#262b31; --char:#191d22;
+  /* text */
+  --ink:#313944; --ink-dim:#68757f; --faint:#8b95a0;
+  /* edges */
+  --hi:#ffffff; --lo:#79848f; --edge:#8b96a1;
+  /* accents — hover / active highlight is now blue (#0d7bbf) */
+  --green:#0d7bbf; --link:#2f6f8f; --link-hi:#0d7bbf;
+  /* layout */
+  --max-width:660px; --nav-height:74px;
+  /* CRT scanline texture — layered onto the bars + content box only */
+  --scan:repeating-linear-gradient(0deg,rgba(8,12,18,.13) 0 1px,transparent 1px 3px);
+}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+html{font-size:16px;scroll-behavior:smooth}
+
+/* ============================================================
+   2. BACKGROUND + GIF LAYER
+   ============================================================ */
+body{
+  font-family:"Jersey 25","Arial Narrow",Arial,Helvetica,sans-serif;
+  color:var(--ink);line-height:1.65;min-height:100vh;font-size:16px;
+  background:
+    linear-gradient(135deg,#c9d0d8 0%,#aeb8c2 42%,#97a1ac 70%,#c3cad2 100%);
+  background-attachment:fixed;
+}
+
+/* Background VIDEO — fills the LEFT 30% of the screen, behind everything.
+   The <video class="bg-video"> element lives in each page's HTML
+   (autoplay + muted + loop, so no JS is needed). */
+.bg-video{
+  position:fixed;inset:0;width:100%;height:100%;z-index:-2;
+  object-fit:cover;             /* fill the whole screen */
+  object-position:left center;  /* keep the important part (left) in view */
+  background:#0c0f13;            /* fallback while the video loads */
+}
+/* The bottom bar is the <footer> itself (see section 13) — it holds the
+   contact links and is styled to match the top bar. */
+/* CRT effect is NOT applied to the whole page — only to the top bar,
+   bottom bar and content box (via their `var(--scan)` background layer). */
+
+/* ============================================================
+   3. TOP BAR (brand + nav)
+   ============================================================ */
+nav.topbar{
+  position:fixed;top:0;left:0;right:0;z-index:100;height:var(--nav-height);
+  display:flex;align-items:center;gap:16px;padding:0 clamp(14px,3vw,30px);
+  background:var(--scan),linear-gradient(180deg,var(--sil-0),var(--sil-2));
+  border-top:1px solid var(--hi);border-bottom:2px solid var(--dark);
+  box-shadow:0 2px 6px rgba(0,0,0,.3), inset 0 0 30px rgba(150,180,165,.12);
+}
+nav.topbar::before{  /* tiny window-chrome ticks along the top */
+  content:"";position:absolute;top:3px;left:14px;right:14px;height:5px;
+  background:repeating-linear-gradient(90deg,var(--sil-3) 0 1px,transparent 1px 5px);opacity:.6;
+}
+.site-name{
+  font-weight:700;font-size:25px;letter-spacing:.26em;text-transform:uppercase;
+  color:var(--dark);text-decoration:none;margin-right:auto;text-shadow:0 1px 0 var(--hi);
+}
+.nav-links{display:flex;align-items:center;gap:2px}
+.nav-links a{
+  font-size:13px;letter-spacing:.18em;text-transform:uppercase;color:var(--steel);
+  text-decoration:none;padding:6px 11px;border:1px solid transparent;transition:.15s;
+}
+.nav-links a:hover,.nav-links a:focus{color:var(--dark);background:rgba(255,255,255,.35)}
+.nav-links a.active{color:var(--green);border-color:var(--lo);
+  background:linear-gradient(180deg,var(--sil-0),var(--sil-1))}
+
+/* ============================================================
+   4. MOBILE NAV TOGGLE (CSS-only)
+   ============================================================ */
+.nav-toggle{display:none}
+label.nav-toggle-label{
+  display:none;cursor:pointer;font-size:20px;line-height:1;color:var(--dark);padding:4px 6px;
+  background:linear-gradient(180deg,var(--sil-0),var(--sil-2));border:1px solid var(--lo);
+}
+
+/* ============================================================
+   5. MAIN WINDOW (right-aligned content panel)
+   ============================================================ */
+main{
+  position:relative;
+  /* Floating content box over the full-screen video: the left ~30% shows
+     the important part of the video, the box floats in the right area. */
+  width:auto;max-width:none;
+  margin:calc(var(--nav-height) + 26px) clamp(18px,3vw,46px) calc(var(--nav-height) + 26px) 32%;
+  padding:34px 44px 30px;
+  background:var(--scan),linear-gradient(160deg,rgba(215,221,227,.93),rgba(184,193,202,.94));
+  border-top:1px solid var(--hi);border-left:1px solid var(--sil-0);
+  border-right:1px solid var(--lo);border-bottom:1px solid var(--lo);
+  /* drop shadow + soft inner phosphor glow (CRT screen feel) */
+  box-shadow:0 12px 36px rgba(0,0,0,.5), inset 0 0 48px rgba(150,180,165,.13);
+}
+/* window titlebar */
+main::before{
+  content:"67";
+  position:absolute;top:0;left:0;right:0;height:20px;display:flex;align-items:center;
+  padding:0 10px;font-size:10px;letter-spacing:.22em;color:#9fb0c0;text-transform:uppercase;
+  background:linear-gradient(180deg,var(--char),var(--dark));
+}
+/* min / close buttons on the titlebar */
+main::after{
+  content:"";position:absolute;top:6px;right:9px;width:20px;height:9px;
+  background:
+    linear-gradient(180deg,#c3cad2,#8a94a0) 0 0/9px 9px no-repeat,
+    linear-gradient(180deg,#c3cad2,#8a94a0) 11px 0/9px 9px no-repeat;
+}
+section{margin-bottom:26px}
+section:last-of-type{margin-bottom:0}
+
+/* ============================================================
+   6. HEADINGS / TEXT / LINKS
+   ============================================================ */
+h1{font-size:30px;font-weight:700;letter-spacing:.02em;text-transform:uppercase;
+  color:var(--dark);text-shadow:0 1px 0 var(--hi);margin-bottom:12px;line-height:1.1}
+h2{font-size:18px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--dark);margin-bottom:8px}
+h3{font-size:15px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;
+  color:var(--dark);margin-bottom:5px}
+p{margin-bottom:12px;color:var(--ink);font-size:16px}
+a{color:var(--link);text-decoration:none;transition:color .15s}
+a:hover{color:var(--link-hi);text-decoration:underline}
+
+/* ============================================================
+   7. HERO + ABOUT
+   ============================================================ */
+.hero{padding-bottom:4px}
+.hero h1{font-size:36px}
+.hero p{color:var(--steel);font-size:14px;letter-spacing:.14em;text-transform:uppercase}
+.about-section{border-top:1px solid var(--lo);padding-top:18px}
+.about-text p:last-child{margin-bottom:0}
+
+/* ============================================================
+   8. PORTFOLIO CARDS + GALLERY
+   ============================================================ */
+.project-card{
+  padding:14px;margin-bottom:16px;
+  background:linear-gradient(160deg,var(--sil-0),var(--sil-2));
+  border-top:1px solid var(--hi);border-left:1px solid var(--sil-0);
+  border-right:1px solid var(--lo);border-bottom:1px solid var(--lo);
+}
+.project-header{display:flex;gap:14px;align-items:flex-start;margin-bottom:10px}
+.project-thumb{width:200px;height:135px;object-fit:cover;flex-shrink:0;cursor:pointer;
+  border:1px solid var(--lo);filter:grayscale(.35) contrast(.95)}
+.project-info{flex:1}
+.project-info h2{margin-bottom:5px}
+.project-info p{font-size:17px;color:var(--ink-dim);margin-bottom:6px}
+.tags{font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--green)}
+.project-gallery{display:flex;gap:6px;flex-wrap:wrap}
+.project-gallery a{display:block;line-height:0}
+.project-gallery img{width:104px;height:70px;object-fit:cover;border:1px solid var(--lo);
+  cursor:pointer;filter:grayscale(.4);transition:filter .2s}
+.project-gallery img:hover{filter:grayscale(0)}
+
+/* ============================================================
+   9. LIGHTBOX
+   ============================================================ */
+.lightbox{position:fixed;inset:0;z-index:1000;opacity:0;pointer-events:none;transition:opacity .2s}
+.lightbox:target{opacity:1;pointer-events:auto}
+.lightbox-backdrop{position:absolute;inset:0;background:rgba(12,15,19,.86);cursor:default}
+.lightbox-content{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);
+  display:flex;align-items:center;z-index:1;max-width:95%}
+.lightbox-inner{max-width:720px;width:100%;max-height:90vh;overflow-y:auto;padding:14px;position:relative;
+  background:linear-gradient(160deg,var(--sil-1),var(--sil-2));
+  border-top:1px solid var(--hi);border-bottom:1px solid var(--lo)}
+.lightbox-inner img{width:100%;height:auto;display:block;margin-bottom:10px;border:1px solid var(--lo)}
+.lightbox-caption{font-size:15px;color:var(--ink);line-height:1.55}
+.lightbox-close{position:absolute;top:8px;right:12px;font-size:20px;line-height:1;font-weight:700;
+  color:var(--steel);text-decoration:none;z-index:10}
+.lightbox-close:hover{color:var(--dark)}
+.lightbox-nav{display:flex;align-items:center;justify-content:center;width:46px;flex-shrink:0;
+  align-self:stretch;font-size:30px;font-weight:700;color:rgba(255,255,255,.7);text-decoration:none;transition:.2s}
+.lightbox-nav:hover{color:#fff}
+
+/* ============================================================
+   10. BLOG LIST
+   ============================================================ */
+.blog-list{list-style:none}
+.blog-list li{padding:8px 0;border-bottom:1px solid var(--lo)}
+.blog-list li:last-child{border-bottom:none}
+.blog-list a{color:var(--ink);text-decoration:none;font-size:19px;letter-spacing:.04em;
+  text-transform:uppercase;transition:color .15s}
+.blog-list a:hover{color:var(--green)}
+.blog-list .date{color:var(--steel);font-size:14px;letter-spacing:.1em;margin-right:12px;
+  font-variant-numeric:tabular-nums}
+
+/* ============================================================
+   11. EXPERIENCE
+   ============================================================ */
+.experience-item{margin-bottom:16px;padding-left:12px;border-left:2px solid var(--steel)}
+.experience-item h2{margin-bottom:2px}
+.experience-item .role{font-size:16px;color:var(--ink-dim)}
+.experience-item .dates{font-size:13px;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--steel);margin-bottom:5px}
+.experience-item p{font-size:16px}
+
+/* ============================================================
+   12. RESOURCES + PDF BUTTONS
+   ============================================================ */
+.resource-list{list-style:none}
+.resource-list li{padding:8px 0;border-bottom:1px solid var(--lo);font-size:16px}
+.resource-list li:last-child{border-bottom:none}
+.resource-list a{color:var(--link);letter-spacing:.04em}
+.resource-list a:hover{color:var(--link-hi)}
+.resource-list .desc{color:var(--ink-dim);font-size:15px}
+.pdf-downloads{display:flex;gap:10px;margin-bottom:22px;flex-wrap:wrap}
+.pdf-btn{display:inline-block;padding:10px 18px;font-size:13px;letter-spacing:.16em;
+  text-transform:uppercase;color:var(--dark) !important;text-decoration:none;
+  background:linear-gradient(180deg,var(--sil-0),var(--sil-2));
+  border-top:1px solid var(--hi);border-left:1px solid var(--sil-0);
+  border-right:1px solid var(--lo);border-bottom:1px solid var(--lo);transition:.15s}
+.pdf-btn:hover{background:linear-gradient(180deg,var(--sil-0),var(--sil-1));color:var(--green) !important}
+.pdf-btn.secondary{color:var(--dark) !important}
+
+/* ============================================================
+   13. FOOTER
+   ============================================================ */
+/* Footer IS the bottom bar — fixed, metallic, holds the contact links. */
+footer{
+  position:fixed;left:0;right:0;bottom:0;z-index:90;height:var(--nav-height);margin:0;
+  display:flex;align-items:center;justify-content:flex-start;gap:clamp(16px,3vw,34px);
+  padding:0 clamp(16px,3vw,30px);
+  background:
+    var(--scan),
+    repeating-linear-gradient(90deg,var(--sil-3) 0 1px,transparent 1px 5px) 14px 6px/calc(100% - 28px) 5px no-repeat,
+    linear-gradient(180deg,var(--sil-0),var(--sil-2));
+  border-top:1px solid var(--hi);border-bottom:2px solid var(--dark);
+  box-shadow:0 -2px 6px rgba(0,0,0,.3), inset 0 0 30px rgba(150,180,165,.12);
+  font-size:13px;letter-spacing:.18em;text-transform:uppercase;
+}
+footer a{color:var(--steel);text-decoration:none}
+footer a:hover{color:var(--green)}
+
+/* ============================================================
+   INTERNET SHELF — retro "88x31" web buttons.
+   Fixed in the bottom-left video column, above the bottom bar,
+   filling only the bottom ~25% of that column.
+   ============================================================ */
+.net-shelf{
+  position:fixed;left:0;bottom:var(--nav-height);
+  width:30%;max-height:25vh;z-index:80;
+  padding:8px 12px 10px;overflow-y:auto;
+  display:flex;flex-direction:column;gap:7px;
+  background:linear-gradient(to top,rgba(8,10,13,.62),rgba(8,10,13,.28) 68%,transparent);
+}
+.net-shelf .shelf-title{display:block;font-size:13px;letter-spacing:.06em;text-transform:uppercase;
+  color:#eef2f5;text-shadow:0 1px 2px #000}
+.net-shelf .shelf-sub{display:block;font-size:10px;letter-spacing:.03em;
+  color:#c3ccd4;text-shadow:0 1px 2px #000}
+.shelf-grid{display:flex;flex-wrap:wrap;gap:5px}
+.shelf-grid img{width:88px;height:31px;object-fit:cover;display:block;border:1px solid #000}
+.btn88{
+  width:88px;height:31px;flex:0 0 auto;
+  display:flex;align-items:center;justify-content:center;text-align:center;
+  font-size:9px;line-height:1.05;letter-spacing:.03em;text-transform:uppercase;
+  color:#dfe6ec;text-decoration:none;
+  background:linear-gradient(180deg,#2a3138,#12161b);
+  border:1px solid;border-color:#5a6570 #0a0d10 #0a0d10 #5a6570;   /* bevel */
+  box-shadow:inset 0 0 6px rgba(90,120,140,.25);
+}
+a.btn88:hover{color:#fff;background:linear-gradient(180deg,#33404c,#151b21);
+  border-color:var(--green) #0a0d10 #0a0d10 var(--green)}
+.btn88.static{cursor:default;color:#aeb8c2}
+
+/* ============================================================
+   14. BLOG POST PAGE
+   ============================================================ */
+.blog-post{max-width:var(--max-width)}
+.blog-post .back-link{display:inline-block;margin-bottom:16px;color:var(--link);
+  font-size:13px;letter-spacing:.12em;text-transform:uppercase}
+.blog-post .back-link:hover{text-decoration:underline}
+.blog-post h1{margin-bottom:6px}
+.blog-post .post-meta{color:var(--steel);font-size:13px;letter-spacing:.14em;
+  text-transform:uppercase;margin-bottom:20px}
+.blog-post p{margin-bottom:14px;font-size:17px;line-height:1.75}
+.blog-post img{max-width:100%;height:auto;margin:16px 0;border:1px solid var(--lo)}
+.blog-post blockquote{border-left:3px solid var(--green);padding-left:14px;margin:16px 0;
+  color:var(--ink-dim);font-style:italic}
+
+/* ============================================================
+   15. RESPONSIVE
+   ============================================================ */
+@media(max-width:720px){
+  label.nav-toggle-label{display:block}
+  .nav-links{position:absolute;top:var(--nav-height);left:0;right:0;flex-direction:column;
+    align-items:flex-start;gap:0;padding:6px 14px;display:none;
+    background:linear-gradient(180deg,var(--sil-0),var(--sil-2));border-bottom:2px solid var(--dark)}
+  .nav-links a{width:100%}
+  .nav-toggle:checked ~ nav.topbar .nav-links{display:flex}
+  /* stack: content full width; the video sits fully behind */
+  main{width:auto;max-width:none;margin:calc(var(--nav-height) + 16px) 12px calc(var(--nav-height) + 16px) 12px}
+  /* footer bar: fit the links on small screens */
+  footer{gap:14px;font-size:11px;letter-spacing:.1em;justify-content:flex-start;
+    overflow-x:auto;padding:0 14px}
+  /* no left video column on mobile → hide the internet shelf */
+  .net-shelf{display:none}
+  .project-header{flex-direction:column}
+  .project-thumb{width:100%;height:auto;max-height:200px}
+  .pdf-downloads{flex-direction:column}
+  .lightbox-content{max-width:100%}
+  .lightbox-nav{width:32px;font-size:24px}
+}

@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Resources — Efe A</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Mobile menu toggle (CSS-only, no JS) -->
+  <input type="checkbox" id="nav-toggle" class="nav-toggle">
+
+  <!-- Background video (fills the left 30%, behind content). autoplay+muted+loop = no JS. -->
+  <video class="bg-video" autoplay muted loop playsinline>
+    <source src="assets/videos/0003.png0000-0240.mp4" type="video/mp4">
+  </video>
+
+  <!-- ========================================
+       TOP NAVIGATION BAR
+       ======================================== -->
+  <nav class="topbar">
+    <a href="index.html" class="site-name">Efe A</a>
+    <label for="nav-toggle" class="nav-toggle-label" aria-label="Toggle navigation">&#9776;</label>
+    <div class="nav-links">
+      <a href="index.html">About</a>
+      <a href="portfolio.html">Portfolio</a>
+      <a href="blog.html">Blog</a>
+      <a href="experience.html">Experience</a>
+      <a href="resources.html" class="active">Resources</a>
+    </div>
+  </nav>
+
+  <main>
+
+    <h1>Resources</h1>
+
+    <!-- ============================================================
+         PDF DOWNLOADS
+         Replace the href values with your actual PDF file paths.
+         Place your PDF files in the assets/ folder
+         (e.g. assets/resume.pdf and assets/portfolio.pdf).
+         ============================================================ -->
+    <div class="pdf-downloads">
+      <a href="assets/resume.pdf" target="_blank" rel="noopener" class="pdf-btn">Download CV (PDF)</a>
+      <a href="assets/portfolio.pdf" target="_blank" rel="noopener" class="pdf-btn secondary">Download Portfolio (PDF)</a>
+    </div>
+
+    <!-- ============================================================
+         MY PROFILES
+         Links to my profiles across the web.
+         ============================================================ -->
+    <h2>My Profiles</h2>
+    <ul class="resource-list">
+      <li>
+        <a href="https://github.com/amadeusalerta" target="_blank" rel="noopener">GitHub</a>
+        <span class="desc"> — Code and open-source projects.</span>
+      </li>
+      <li>
+        <a href="https://taftman01.itch.io" target="_blank" rel="noopener">Itch.io</a>
+        <span class="desc"> — Games I've released.</span>
+      </li>
+      <li>
+        <a href="https://artstation.com/amadeusalerta" target="_blank" rel="noopener">ArtStation</a>
+        <span class="desc"> — 3D art and modelling work.</span>
+      </li>
+      <li>
+        <a href="https://linkedin.com/in/efesametaltinbas" target="_blank" rel="noopener">LinkedIn</a>
+        <span class="desc"> — Professional background and experience.</span>
+      </li>
+    </ul>
+
+    <!-- ============================================================
+         REFERENCES / USEFUL LINKS
+
+         HOW TO ADD A NEW RESOURCE:
+         Add a new <li> with a link and description.
+         ============================================================ -->
+    <h2>Useful References</h2>
+    <ul class="resource-list">
+      <!-- RESOURCE ENTRY — copy this <li> to add more -->
+      <li>
+        <a href="https://docs.unity3d.com" target="_blank" rel="noopener">Unity Documentation</a>
+        <span class="desc"> — Official Unity engine reference.</span>
+      </li>
+      <!-- END RESOURCE ENTRY -->
+
+      <li>
+        <a href="https://docs.blender.org" target="_blank" rel="noopener">Blender Manual</a>
+        <span class="desc"> — Complete Blender documentation.</span>
+      </li>
+
+      <li>
+        <a href="https://www.gameenginebook.com" target="_blank" rel="noopener">Game Engine Architecture</a>
+        <span class="desc"> — Excellent book on game engine design.</span>
+      </li>
+
+      <li>
+        <a href="https://learn.microsoft.com/dotnet/csharp/" target="_blank" rel="noopener">C# Documentation</a>
+        <span class="desc"> — Microsoft's official C# reference.</span>
+      </li>
+    </ul>
+
+    <!-- ============================================================
+         FOOTER — contact links
+         ============================================================ -->
+    <footer>
+      <a href="https://github.com/amadeusalerta" target="_blank" rel="noopener">GitHub</a>
+      <a href="https://linkedin.com/in/efesametaltinbas" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://taftman01.itch.io" target="_blank" rel="noopener">Itch.io</a>
+      <a href="https://artstation.com/amadeusalerta" target="_blank" rel="noopener">ArtStation</a>
+    </footer>
+
+  </main>
+
+  <!-- ============================================================
+       INTERNET SHELF — retro "88x31" web buttons (bottom-left column).
+       linking button: <a class="btn88" href="...">label</a>
+       plain badge:    <span class="btn88 static">label</span>
+       Real 88x31 gifs: put them in assets/images/buttons/ and use
+       <a href="..."><img src="assets/images/buttons/x.gif" width="88" height="31"></a>
+       ============================================================ -->
+  <aside class="net-shelf" aria-label="Internet shelf">
+    <span class="shelf-title">Internet shelf</span>
+    <div class="shelf-grid">
+      <!-- linking buttons (click → go somewhere) -->
+      <a href="https://github.com/amadeusalerta" target="_blank" rel="noopener"><img src="assets/images/buttons/github.gif" alt="GitHub" width="88" height="31"></a>
+      <a href="https://www.blender.org" target="_blank" rel="noopener"><img src="assets/images/buttons/blender.gif" alt="Blender" width="88" height="31"></a>
+      <!-- plain badges (just gifs, no link) -->
+      <img src="assets/images/buttons/eagamat2.gif" alt="button" width="88" height="31">
+      <img src="assets/images/buttons/css3.gif" alt="CSS3" width="88" height="31">
+      <img src="assets/images/buttons/cssvalid.gif" alt="Valid CSS" width="88" height="31">
+      <img src="assets/images/buttons/apache-powered.gif" alt="Powered by Apache" width="88" height="31">
+      <img src="assets/images/buttons/coreboot.gif" alt="coreboot" width="88" height="31">
+      <img src="assets/images/buttons/aviation1.gif" alt="Aviation" width="88" height="31">
+      <img src="assets/images/buttons/iexplorer.gif" alt="Internet Explorer" width="88" height="31">
+      <img src="assets/images/buttons/steam.gif" alt="Steam" width="88" height="31">
+    </div>
+  </aside>
+
+</body>
+</html>

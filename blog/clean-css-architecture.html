@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Notes on Clean CSS Architecture — Blog</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+  <!-- Mobile menu toggle (CSS-only, no JS) -->
+  <input type="checkbox" id="nav-toggle" class="nav-toggle">
+
+  <!-- Background video (fills the left 30%, behind content). autoplay+muted+loop = no JS. -->
+  <video class="bg-video" autoplay muted loop playsinline>
+    <source src="../assets/videos/0003.png0000-0240.mp4" type="video/mp4">
+  </video>
+
+  <!-- ========================================
+       TOP NAVIGATION BAR
+       Links point back to the main pages.
+       ======================================== -->
+  <nav class="topbar">
+    <a href="../index.html" class="site-name">Efe A</a>
+    <label for="nav-toggle" class="nav-toggle-label" aria-label="Toggle navigation">&#9776;</label>
+    <div class="nav-links">
+      <a href="../index.html">About</a>
+      <a href="../portfolio.html">Portfolio</a>
+      <a href="../blog.html" class="active">Blog</a>
+      <a href="../experience.html">Experience</a>
+      <a href="../resources.html">Resources</a>
+    </div>
+  </nav>
+
+  <main>
+
+    <!-- ============================================================
+         BLOG POST
+
+         HOW TO CREATE A NEW POST:
+         1. Copy this entire file and rename it (e.g. "my-new-post.html").
+         2. Update the <title> tag above.
+         3. Change the <h1>, date, and body content below.
+         4. To insert an image inside the article, use:
+              <img src="../assets/images/your-image.jpg" alt="Description">
+         5. Add a link to your new post in blog.html's list.
+         ============================================================ -->
+    <article class="blog-post">
+      <a href="../blog.html" class="back-link">&larr; Back to all posts</a>
+
+      <h1>Notes on Clean CSS Architecture</h1>
+      <div class="post-meta">June 22, 2026</div>
+
+      <p>
+        After building a few small sites from scratch, I've started to
+        notice patterns in how my CSS either stays manageable or turns into
+        a mess. These are some notes — mostly for my future self — on what
+        seems to work.
+      </p>
+
+      <h2>One File Is Fine (Really)</h2>
+
+      <p>
+        For small projects, a single stylesheet is perfectly fine. The urge
+        to split everything into partials and imports comes from working on
+        large codebases. A personal site with five pages doesn't need that
+        complexity. One file, well-organized with clear section comments,
+        is easier to navigate than ten small files.
+      </p>
+
+      <!-- INSERT AN IMAGE: place your image in assets/images/ and update the src -->
+      <img
+        src="../assets/images/WinXP.jpg"
+        alt="Example of a well-structured CSS file"
+      >
+
+      <h2>CSS Custom Properties Change Everything</h2>
+
+      <p>
+        Using CSS variables (custom properties) for colors, spacing, and
+        font sizes was the single biggest improvement I made. Changing the
+        accent color of the entire site means editing one line. Before that,
+        I was doing find-and-replace across hundreds of lines.
+      </p>
+
+      <p>
+        I keep all my variables in a <code>:root</code> block at the top of
+        the file. Anyone reading the stylesheet can immediately see the
+        design tokens without scrolling through rules.
+      </p>
+
+      <h2>Naming Things</h2>
+
+      <p>
+        I don't follow BEM or any strict methodology. Instead, I use
+        descriptive class names that read like what they are:
+        <code>.project-card</code>, <code>.blog-list</code>,
+        <code>.experience-item</code>. If the name makes sense when you
+        read the HTML without seeing the CSS, it's good enough.
+      </p>
+
+      <blockquote>
+        The best CSS is the CSS you can delete without breaking anything
+        you didn't intend to change.
+      </blockquote>
+
+      <h2>Mobile-First vs. Desktop-First</h2>
+
+      <p>
+        I used to write desktop styles first and then override with media
+        queries for mobile. Lately I've been doing the opposite — starting
+        with a single-column layout and adding complexity for wider screens.
+        It results in less code overall because the mobile layout is usually
+        simpler.
+      </p>
+
+      <!-- INSERT ANOTHER IMAGE (optional):
+           <img src="../assets/images/another-image.jpg" alt="Description">
+      -->
+
+      <p>
+        None of this is groundbreaking, but writing it down helps me stay
+        consistent. The goal isn't a perfect system — it's a system that
+        doesn't get in the way six months later when I need to change
+        something.
+      </p>
+    </article>
+
+    <!-- ============================================================
+         FOOTER
+         ============================================================ -->
+    <footer>
+      <a href="https://github.com/amadeusalerta" target="_blank" rel="noopener">GitHub</a>
+      <a href="https://linkedin.com/in/efesametaltinbas" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://taftman01.itch.io" target="_blank" rel="noopener">Itch.io</a>
+      <a href="https://artstation.com/amadeusalerta" target="_blank" rel="noopener">ArtStation</a>
+    </footer>
+
+  </main>
+
+  <!-- ============================================================
+       INTERNET SHELF — retro "88x31" web buttons (bottom-left column).
+       linking button: <a class="btn88" href="...">label</a>
+       plain badge:    <span class="btn88 static">label</span>
+       Real 88x31 gifs (from a blog/ page): put them in
+       assets/images/buttons/ and use
+       <a href="..."><img src="../assets/images/buttons/x.gif" width="88" height="31"></a>
+       ============================================================ -->
+  <aside class="net-shelf" aria-label="Internet shelf">
+    <span class="shelf-title">Internet shelf</span>
+    <div class="shelf-grid">
+      <!-- linking buttons (click → go somewhere) -->
+      <a href="https://github.com/amadeusalerta" target="_blank" rel="noopener"><img src="../assets/images/buttons/github.gif" alt="GitHub" width="88" height="31"></a>
+      <a href="https://www.blender.org" target="_blank" rel="noopener"><img src="../assets/images/buttons/blender.gif" alt="Blender" width="88" height="31"></a>
+      <!-- plain badges (just gifs, no link) -->
+      <img src="../assets/images/buttons/eagamat2.gif" alt="button" width="88" height="31">
+      <img src="../assets/images/buttons/css3.gif" alt="CSS3" width="88" height="31">
+      <img src="../assets/images/buttons/cssvalid.gif" alt="Valid CSS" width="88" height="31">
+      <img src="../assets/images/buttons/apache-powered.gif" alt="Powered by Apache" width="88" height="31">
+      <img src="../assets/images/buttons/coreboot.gif" alt="coreboot" width="88" height="31">
+      <img src="../assets/images/buttons/aviation1.gif" alt="Aviation" width="88" height="31">
+      <img src="../assets/images/buttons/iexplorer.gif" alt="Internet Explorer" width="88" height="31">
+      <img src="../assets/images/buttons/steam.gif" alt="Steam" width="88" height="31">
+    </div>
+  </aside>
+
+</body>
+</html>

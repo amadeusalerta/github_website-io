@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Experience — Efe A</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Mobile menu toggle (CSS-only, no JS) -->
+  <input type="checkbox" id="nav-toggle" class="nav-toggle">
+
+  <!-- Background video (fills the left 30%, behind content). autoplay+muted+loop = no JS. -->
+  <video class="bg-video" autoplay muted loop playsinline>
+    <source src="assets/videos/0003.png0000-0240.mp4" type="video/mp4">
+  </video>
+
+  <!-- ========================================
+       TOP NAVIGATION BAR
+       ======================================== -->
+  <nav class="topbar">
+    <a href="index.html" class="site-name">Efe A</a>
+    <label for="nav-toggle" class="nav-toggle-label" aria-label="Toggle navigation">&#9776;</label>
+    <div class="nav-links">
+      <a href="index.html">About</a>
+      <a href="portfolio.html">Portfolio</a>
+      <a href="blog.html">Blog</a>
+      <a href="experience.html" class="active">Experience</a>
+      <a href="resources.html">Resources</a>
+    </div>
+  </nav>
+
+  <main>
+
+    <!-- ============================================================
+         EXPERIENCE / WORK HISTORY
+
+         HOW TO ADD A NEW ENTRY:
+         Copy a <div class="experience-item"> block, paste it,
+         and fill in company, role, dates, and description.
+         ============================================================ -->
+    <h1>Experience</h1>
+
+    <!-- EXPERIENCE ENTRY — copy this block to add more -->
+    <div class="experience-item">
+      <h2>Karalabs Yazılım</h2>
+      <div class="role">Game Developer &amp; Level Design — Full Time</div>
+      <div class="dates">Jun 2026 &ndash; Present</div>
+      <p>
+        Working on mobile game development. I also carry out market research
+        and level design.
+      </p>
+    </div>
+    <!-- END EXPERIENCE ENTRY -->
+
+    <div class="experience-item">
+      <h2>Wide Game Studio</h2>
+      <div class="role">Game Developer — Internship</div>
+      <div class="dates">Feb 2026 &ndash; May 2026</div>
+      <p>
+        Contributed to Project Fabula as a developer. Worked on optimization
+        and the state machine, mob behaviour, Photon Fusion 2, an admin &amp;
+        moderation system, and POI design and development following SOLID
+        principles.
+      </p>
+    </div>
+
+    <div class="experience-item">
+      <h2>GamesMrkt</h2>
+      <div class="role">Game Developer — Internship</div>
+      <div class="dates">Mar 2025 &ndash; Jul 2025</div>
+      <p>
+        Worked as a developer intern, contributing to the development of
+        individual small-scale games. Supported the team with 3D modelling
+        tasks and applied practical experience throughout the development
+        process.
+      </p>
+    </div>
+
+    <div class="experience-item">
+      <h2>Indie Game Developer</h2>
+      <div class="role">Freelance Game Developer &amp; 3D Artist</div>
+      <div class="dates">May 2021 &ndash; Present</div>
+      <p>
+        Working as a freelance game developer, delivering custom game
+        projects for clients. In parallel, I'm independently developing a
+        commercial game planned for release on Steam.
+      </p>
+    </div>
+
+    <div class="experience-item">
+      <h2>G-ROV — Teknofest 2024</h2>
+      <div class="role">Software Engineer</div>
+      <div class="dates">Dec 2023 &ndash; Sep 2024</div>
+      <p>
+        For Turkey's largest technology competition, Teknofest, I worked with
+        an experienced team specializing in ROV development. I contributed to
+        the training and implementation of artificial intelligence models and
+        actively developed image processing systems for our autonomous ROV.
+      </p>
+    </div>
+
+    <div class="experience-item">
+      <h2>Mass Games</h2>
+      <div class="role">3D Artist &amp; Unity Game Developer — Co-founder</div>
+      <div class="dates">Jan 2020 &ndash; May 2022</div>
+      <p>
+        Co-founded a game development studio with a partner, where we
+        delivered custom game projects. Took an active role in both technical
+        and creative development, including 3D asset modelling using Blender
+        and gameplay/system programming in Unity.
+      </p>
+    </div>
+
+    <!-- ============================================================
+         FOOTER — contact links
+         ============================================================ -->
+    <footer>
+      <a href="https://github.com/amadeusalerta" target="_blank" rel="noopener">GitHub</a>
+      <a href="https://linkedin.com/in/efesametaltinbas" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://taftman01.itch.io" target="_blank" rel="noopener">Itch.io</a>
+      <a href="https://artstation.com/amadeusalerta" target="_blank" rel="noopener">ArtStation</a>
+    </footer>
+
+  </main>
+
+  <!-- ============================================================
+       INTERNET SHELF — retro "88x31" web buttons (bottom-left column).
+       linking button: <a class="btn88" href="...">label</a>
+       plain badge:    <span class="btn88 static">label</span>
+       Real 88x31 gifs: put them in assets/images/buttons/ and use
+       <a href="..."><img src="assets/images/buttons/x.gif" width="88" height="31"></a>
+       ============================================================ -->
+  <aside class="net-shelf" aria-label="Internet shelf">
+    <span class="shelf-title">Internet shelf</span>
+    <div class="shelf-grid">
+      <!-- linking buttons (click → go somewhere) -->
+      <a href="https://github.com/amadeusalerta" target="_blank" rel="noopener"><img src="assets/images/buttons/github.gif" alt="GitHub" width="88" height="31"></a>
+      <a href="https://www.blender.org" target="_blank" rel="noopener"><img src="assets/images/buttons/blender.gif" alt="Blender" width="88" height="31"></a>
+      <!-- plain badges (just gifs, no link) -->
+      <img src="assets/images/buttons/eagamat2.gif" alt="button" width="88" height="31">
+      <img src="assets/images/buttons/css3.gif" alt="CSS3" width="88" height="31">
+      <img src="assets/images/buttons/cssvalid.gif" alt="Valid CSS" width="88" height="31">
+      <img src="assets/images/buttons/apache-powered.gif" alt="Powered by Apache" width="88" height="31">
+      <img src="assets/images/buttons/coreboot.gif" alt="coreboot" width="88" height="31">
+      <img src="assets/images/buttons/aviation1.gif" alt="Aviation" width="88" height="31">
+      <img src="assets/images/buttons/iexplorer.gif" alt="Internet Explorer" width="88" height="31">
+      <img src="assets/images/buttons/steam.gif" alt="Steam" width="88" height="31">
+    </div>
+  </aside>
+
+</body>
+</html>

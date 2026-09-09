@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Building My First Portfolio Site — Blog</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+  <!-- Mobile menu toggle (CSS-only, no JS) -->
+  <input type="checkbox" id="nav-toggle" class="nav-toggle">
+
+  <!-- Background video (fills the left 30%, behind content). autoplay+muted+loop = no JS. -->
+  <video class="bg-video" autoplay muted loop playsinline>
+    <source src="../assets/videos/0003.png0000-0240.mp4" type="video/mp4">
+  </video>
+
+  <!-- Top navigation bar -->
+  <nav class="topbar">
+    <a href="../index.html" class="site-name">Efe A</a>
+    <label for="nav-toggle" class="nav-toggle-label" aria-label="Toggle navigation">&#9776;</label>
+    <div class="nav-links">
+      <a href="../index.html">About</a>
+      <a href="../portfolio.html">Portfolio</a>
+      <a href="../blog.html" class="active">Blog</a>
+      <a href="../experience.html">Experience</a>
+      <a href="../resources.html">Resources</a>
+    </div>
+  </nav>
+
+  <main>
+
+    <!-- ============================================================
+         BLOG POST
+
+         HOW TO CREATE A NEW POST:
+         1. Copy this entire file and rename it (e.g. "my-new-post.html").
+         2. Update the <title> tag above.
+         3. Change the <h1>, date, and body content below.
+         4. To insert an image inside the article, use:
+              <img src="../assets/images/your-image.jpg" alt="Description">
+         5. Add a link to your new post in blog.html's list.
+         ============================================================ -->
+    <article class="blog-post">
+      <a href="../blog.html" class="back-link">&larr; Back to all posts</a>
+
+      <h1>Building My First Portfolio Site</h1>
+      <div class="post-meta">August 1, 2026</div>
+
+      <p>
+        I've been meaning to put together a personal site for a while now.
+        Not something flashy — just a clean, simple place to collect my work
+        and write about things I'm learning. This post is about how I
+        approached it and what I ended up with.
+      </p>
+
+      <h2>Keeping It Simple</h2>
+
+      <p>
+        The first decision was to skip frameworks entirely. No React, no
+        static site generators, no build step. Just HTML and CSS opened
+        directly in the browser. It turns out you can get surprisingly far
+        with just that.
+      </p>
+
+      <!-- INSERT AN IMAGE: place your image in assets/images/ and update the src -->
+      <img
+        src="../assets/images/WinXP.jpg"
+        alt="A screenshot of the site in progress"
+      >
+
+      <p>
+        I looked at a few sites I admire for their simplicity — the kind of
+        pages that load instantly and let the content speak for itself.
+        Text-forward design, restrained colors, generous whitespace. That
+        became the target.
+      </p>
+
+      <h2>What I Learned</h2>
+
+      <p>
+        CSS has come a long way. Flexbox handles the layout needs for a site
+        like this without any hacks. A single media query gets the responsive
+        behavior working on phones. The CSS-only mobile menu toggle (using a
+        hidden checkbox) was a fun trick to figure out.
+      </p>
+
+      <blockquote>
+        The best design decisions are the ones you don't make — fewer choices
+        means fewer things that can go wrong.
+      </blockquote>
+
+      <p>
+        The portfolio section uses a simple card layout that's easy to
+        duplicate. Each card has space for an image and a text description.
+        Adding a new project is just copying a block of HTML and swapping in
+        the details.
+      </p>
+
+      <h2>Next Steps</h2>
+
+      <p>
+        I still need to fill in actual project screenshots, write a proper
+        bio, and add a few more blog posts. But the structure is there, and
+        that was the hard part. Everything else is just content.
+      </p>
+
+      <!-- INSERT ANOTHER IMAGE (optional):
+           <img src="../assets/images/another-image.jpg" alt="Description of the image">
+      -->
+
+      <p>
+        If you're thinking about building your own site, I'd recommend
+        starting this way. You can always add complexity later, but it's
+        much harder to take it away.
+      </p>
+    </article>
+
+    <footer>
+      <a href="https://github.com/amadeusalerta" target="_blank" rel="noopener">GitHub</a>
+      <a href="https://linkedin.com/in/efesametaltinbas" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://taftman01.itch.io" target="_blank" rel="noopener">Itch.io</a>
+      <a href="https://artstation.com/amadeusalerta" target="_blank" rel="noopener">ArtStation</a>
+    </footer>
+  </main>
+
+  <!-- ============================================================
+       INTERNET SHELF — retro "88x31" web buttons (bottom-left column).
+       linking button: <a class="btn88" href="...">label</a>
+       plain badge:    <span class="btn88 static">label</span>
+       Real 88x31 gifs (from a blog/ page): put them in
+       assets/images/buttons/ and use
+       <a href="..."><img src="../assets/images/buttons/x.gif" width="88" height="31"></a>
+       ============================================================ -->
+  <aside class="net-shelf" aria-label="Internet shelf">
+    <span class="shelf-title">Internet shelf</span>
+    <div class="shelf-grid">
+      <!-- linking buttons (click → go somewhere) -->
+      <a href="https://github.com/amadeusalerta" target="_blank" rel="noopener"><img src="../assets/images/buttons/github.gif" alt="GitHub" width="88" height="31"></a>
+      <a href="https://www.blender.org" target="_blank" rel="noopener"><img src="../assets/images/buttons/blender.gif" alt="Blender" width="88" height="31"></a>
+      <!-- plain badges (just gifs, no link) -->
+      <img src="../assets/images/buttons/eagamat2.gif" alt="button" width="88" height="31">
+      <img src="../assets/images/buttons/css3.gif" alt="CSS3" width="88" height="31">
+      <img src="../assets/images/buttons/cssvalid.gif" alt="Valid CSS" width="88" height="31">
+      <img src="../assets/images/buttons/apache-powered.gif" alt="Powered by Apache" width="88" height="31">
+      <img src="../assets/images/buttons/coreboot.gif" alt="coreboot" width="88" height="31">
+      <img src="../assets/images/buttons/aviation1.gif" alt="Aviation" width="88" height="31">
+      <img src="../assets/images/buttons/iexplorer.gif" alt="Internet Explorer" width="88" height="31">
+      <img src="../assets/images/buttons/steam.gif" alt="Steam" width="88" height="31">
+    </div>
+  </aside>
+
+</body>
+</html>

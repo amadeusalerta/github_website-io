@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Efe A</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Mobile menu toggle (CSS-only, no JS) -->
+  <input type="checkbox" id="nav-toggle" class="nav-toggle">
+
+  <!-- Background video (fills the left 30%, behind content). autoplay+muted+loop = no JS. -->
+  <video class="bg-video" autoplay muted loop playsinline>
+    <source src="assets/videos/0003.png0000-0240.mp4" type="video/mp4">
+  </video>
+
+  <!-- ========================================
+       TOP NAVIGATION BAR
+       The home page doubles as the "About" page,
+       so the About link points back here (index.html).
+       ======================================== -->
+  <nav class="topbar">
+    <a href="index.html" class="site-name">Efe A</a>
+    <label for="nav-toggle" class="nav-toggle-label" aria-label="Toggle navigation">&#9776;</label>
+    <div class="nav-links">
+      <a href="index.html" class="active">About</a>
+      <a href="portfolio.html">Portfolio</a>
+      <a href="blog.html">Blog</a>
+      <a href="experience.html">Experience</a>
+      <a href="resources.html">Resources</a>
+    </div>
+  </nav>
+
+  <main>
+
+    <!-- ============================================================
+         INTRO + ABOUT
+         The landing section and bio live together here.
+         Edit the paragraphs below to update your bio.
+         ============================================================ -->
+    <section class="hero">
+      <h1>Hello, I'm Efe A.</h1>
+      <p>
+        Unity Game Developer & 3D Artist And Likes C++ & Java.
+      </p>
+    </section>
+
+    <section class="about-section">
+      <div class="about-text">
+        <p>
+          I'm a Software Engineer with a strong background in game
+          development, HLSL, 3D modelling and ML. I have consistently expanded my technical skill set,
+          specializing in Unity, C# and Blender. I am also working on a C++ & Vulkan based Game Engine.
+        </p>
+        <p>
+          I'm making games with Unity since 2018. I've released games on Itch.io and was a finalist at Teknofest 2024
+          with an autonomous ROV project, where I worked on AI models and
+          image processing systems.
+        </p>
+        <p>
+          Alongside client work, I'm independently developing a commercial
+          game planned for release on Steam. Take a look at my
+          <a href="portfolio.html">work</a>, read my
+          <a href="blog.html">blog</a>, or see my
+          <a href="experience.html">experience</a>. Feel free to reach out —
+          I'm always happy to chat.
+        </p>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         FOOTER — contact links
+         ============================================================ -->
+    <footer>
+      <a href="https://github.com/amadeusalerta" target="_blank" rel="noopener">GitHub</a>
+      <a href="https://linkedin.com/in/efesametaltinbas" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://taftman01.itch.io" target="_blank" rel="noopener">Itch.io</a>
+      <a href="https://artstation.com/amadeusalerta" target="_blank" rel="noopener">ArtStation</a>
+    </footer>
+
+  </main>
+
+  <!-- ============================================================
+       INTERNET SHELF — retro "88x31" web buttons.
+       Fixed in the bottom-left video column, above the bottom bar.
+       Two kinds of tiles:
+         • linking button:  <a class="btn88" href="...">label</a>
+         • plain badge:     <span class="btn88 static">label</span>
+       TO USE REAL 88x31 GIF BUTTONS: drop your .gif files in
+       assets/images/buttons/ and swap a tile for, e.g.:
+         <a href="https://site.com" target="_blank" rel="noopener">
+           <img src="assets/images/buttons/name.gif" alt="site" width="88" height="31">
+         </a>
+       (On pages inside blog/, use ../assets/images/buttons/ )
+       ============================================================ -->
+  <aside class="net-shelf" aria-label="Internet shelf">
+    <span class="shelf-title">Internet shelf</span>
+    <div class="shelf-grid">
+      <!-- linking buttons (click → go somewhere) -->
+      <a href="https://github.com/amadeusalerta" target="_blank" rel="noopener"><img src="assets/images/buttons/github.gif" alt="GitHub" width="88" height="31"></a>
+      <a href="https://www.blender.org" target="_blank" rel="noopener"><img src="assets/images/buttons/blender.gif" alt="Blender" width="88" height="31"></a>
+      <!-- plain badges (just gifs, no link) -->
+      <img src="assets/images/buttons/eagamat2.gif" alt="button" width="88" height="31">
+      <img src="assets/images/buttons/css3.gif" alt="CSS3" width="88" height="31">
+      <img src="assets/images/buttons/cssvalid.gif" alt="Valid CSS" width="88" height="31">
+      <img src="assets/images/buttons/apache-powered.gif" alt="Powered by Apache" width="88" height="31">
+      <img src="assets/images/buttons/coreboot.gif" alt="coreboot" width="88" height="31">
+      <img src="assets/images/buttons/aviation1.gif" alt="Aviation" width="88" height="31">
+      <img src="assets/images/buttons/iexplorer.gif" alt="Internet Explorer" width="88" height="31">
+      <img src="assets/images/buttons/steam.gif" alt="Steam" width="88" height="31">
+    </div>
+  </aside>
+
+</body>
+</html>
